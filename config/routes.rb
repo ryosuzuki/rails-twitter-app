@@ -2,7 +2,7 @@ RailsTwitterApp::Application.routes.draw do
 
   root :to => 'users#index', :via => :get
 
-  match 'auth/:provider/callback', :to => 'sessions#oauth'
+  match 'auth/:provider/callback', :to => 'sessions#create'
   match 'auth/failure' => redirect('/')
 
   resources :users
