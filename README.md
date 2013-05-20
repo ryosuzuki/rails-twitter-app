@@ -16,7 +16,7 @@ This is simple twiiter application with rails
 
 To use Twitter API, please set up `ENV['TWITTER_KEY']` and `ENV['TWITTER_SECRET']`
 
-We recommend to use `dotenv-rails' gem (including `Gemfile`)
+We recommend to use `dotenv-rails` gem (please show https://github.com/bkeepers/dotenv more detail)
 
 Please create `.env` file like this 
 
