@@ -1,5 +1,11 @@
+<% if current_user %>
+<p>
+  Hello
+  <%= link_to current_user.username, user_path(current_user.id) %>
+</p>
+<% else %>
 <%= link_to 'Connect Twitter', '/auth/twitter' %>
-
+<% end %>
 
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
