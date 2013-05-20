@@ -1,4 +1,13 @@
 RailsTwitterApp::Application.routes.draw do
+
+  root :to => 'users#index', :via => :get
+
+  match 'auth/:provider/callback', :to => 'sessions#oauth'
+  match 'auth/failure' => redirect('/')
+
+  resources :users
+  resources :sessions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

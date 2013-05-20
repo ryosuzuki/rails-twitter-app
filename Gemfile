@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
+gem 'dotenv'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
