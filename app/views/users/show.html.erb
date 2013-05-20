@@ -1,15 +1,17 @@
-<h1>Timeline for <%= @user.username %></h1>
+<div id="users-show">
+  <h1>Timeline for <%= @user.username %></h1>
 
-<% @tweets.each do |tweet| %>
-<div class="tweet">
-  <div class="text">
-    <%= tweet['text'] %>
+  <% @tweets.each do |tweet| %>
+  <div class="tweet">
+    <div class="text">
+      <%= tweet['text'] %>
+    </div>
+    <div class="user">
+      tweet by <%= tweet['user']['screen_name'] %>
+    </div>
+    <div class="time">
+      <%= tweet['created_at'].to_date %>
+    </div>
   </div>
-  <div class="user">
-    tweet by <%= tweet['user']['screen_name'] %>
-  </div>
-  <div class="time">
-    <%= tweet['created_at'] %>
-  </div>
+  <% end %>
 </div>
-<% end %>

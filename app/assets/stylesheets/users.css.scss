@@ -1,3 +1,44 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$backgroundColor: #f8f8f8;
+$linkColor: #dd4814;
+$hoverColor: #491f47;
+$textColor: #503722;
+$grayColor: #999;
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+body {
+  font-family: Ubuntu;
+}
+
+a {
+  color: $linkColor;
+  &:hover {
+    color: $hoverColor;
+  }
+}
+
+#users-index {
+  width: 700px;
+  margin: auto;
+}
+
+#users-show {
+  width: 700px;
+  margin: auto;
+  .tweet {
+    background: $backgroundColor;
+    padding: 20px;
+    margin-bottom: 15px;
+    .text {
+      font-size: 1.1em;
+      color: $textColor;
+    }
+    .user, .time {
+      color: $grayColor;
+    }
+  }
+}
