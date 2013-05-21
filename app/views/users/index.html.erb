@@ -9,7 +9,10 @@
   <% end %>
 
   <h1>Users</h1>
+  <!--
   <p>If you set up a private mode, others can not see your tweets in the application. Please feel free to use.</p>
+  -->
+  <p>プライベートモードのユーザーのツイートは、他の人には表示されません。安心してお使いください。</p>
   <% @users.each do |user| %>
   <div class="user">
     <%= link_to '@' + user.username, user_path(user.id) %>
