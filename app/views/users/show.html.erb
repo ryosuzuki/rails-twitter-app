@@ -1,7 +1,8 @@
 <div id="users-show">
-  <h1>Timeline for <%= @user.username %></h1>
+  <h1>Timeline for <%= link_to '@' + @user.username, 'https://twitter.com/' + @user.username, :target => 'blank' %></h1>
 
   <% @tweets.each do |tweet| %>
+  <% if tweet['user']['protected'] == false || tweet['user'] == current_user.username%>
   <div class="tweet">
     <div class="text">
       <%= tweet['text'] %>
@@ -13,5 +14,6 @@
       <%= tweet['created_at'].to_date %>
     </div>
   </div>
+  <% end %>
   <% end %>
 </div>

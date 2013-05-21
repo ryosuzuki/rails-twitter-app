@@ -2,16 +2,17 @@
   <% if current_user %>
   <p>
     Hello
-    <%= link_to current_user.username, user_path(current_user.id) %>
+    <%= link_to '@' + current_user.username, user_path(current_user.id) %>
   </p>
   <% else %>
   <%= link_to 'Connect Twitter', '/auth/twitter' %>
   <% end %>
 
   <h1>Users</h1>
+  <p>If you set up a private mode, others can not see your tweets in the application. Please feel free to use.</p>
   <% @users.each do |user| %>
   <div class="user">
-    <%= link_to user.username, user_path(user.id) %>
+    <%= link_to '@' + user.username, user_path(user.id) %>
   </div>
   <% end %>
 </div>

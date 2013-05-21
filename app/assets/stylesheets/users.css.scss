@@ -16,6 +16,7 @@ body {
 
 a {
   color: $linkColor;
+  text-decoration: none;
   &:hover {
     color: $hoverColor;
   }
