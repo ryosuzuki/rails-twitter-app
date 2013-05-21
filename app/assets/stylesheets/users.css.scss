@@ -25,6 +25,10 @@ a {
 #users-index {
   width: 700px;
   margin: auto;
+  .user {
+    font-size: 1.1em; 
+    padding: 5px;
+  }
 }
 
 #users-show {
