@@ -1,17 +1,23 @@
 <div id="users-show">
-  <h1>Timeline for <%= link_to '@' + @user.username, 'https://twitter.com/' + @user.username, :target => 'blank' %></h1>
+  <h1>
+    <span>Timeline for </span>
+    <span><%= link_to "@#{@user.username} on Twitter", "https://twitter.com/#{@user.username}", target: "blank" %></span>
+  </h1>
+  <p>
+    <%= link_to "Go Back to Home", root_path %>
+  </p>
 
   <% @tweets.each do |tweet| %>
-  <% if tweet['user']['protected'] == false || tweet['user'] == current_user.username%>
+  <% if tweet[:user][:protected] == false || tweet[:user] == current_user.username%>
   <div class="tweet">
     <div class="text">
-      <%= tweet['text'] %>
+      <%= tweet[:text] %>
     </div>
     <div class="user">
-      tweet by <%= tweet['user']['screen_name'] %>
+      tweet by <%= tweet[:user][:screen_name] %>
     </div>
     <div class="time">
-      <%= tweet['created_at'].to_date %>
+      <%= tweet[:created_at].to_date %>
     </div>
   </div>
   <% end %>

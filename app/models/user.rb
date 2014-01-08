@@ -1,11 +1,23 @@
 class User < ActiveRecord::Base
-  attr_accessible :secret, :token, :uid, :username
+
+  validates :uid, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
+  validates :token, presence: true
+  validates :secret, presence: true
 
   def self.oauth(auth)
-    if User.find_by_uid(auth['uid']).nil?
-      @user = User.create({ :uid => auth['uid'], :username => auth['info']['nickname'], :token => auth['credentials']['token'], :secret => auth['credentials']['secret'] })
+    uid = auth[:uid]
+    params = {
+      username: auth[:info][:nickname],
+      token: auth[:credentials][:token], 
+      secret: auth[:credentials][:secret] 
+    }
+    @user = User.find_by(uid: uid)
+    if @user.nil?
+      params = params.merge(uid: uid) 
+      @user = User.create(params)
     else
-      @user = User.find_by_uid(auth['uid'])
+      @user.update(params)
     end
   end
 
