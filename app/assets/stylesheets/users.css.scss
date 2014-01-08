@@ -1,7 +1,3 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 $backgroundColor: #f8f8f8;
 $linkColor: #dd4814;
 $hoverColor: #491f47;
@@ -26,7 +22,7 @@ a {
   width: 700px;
   margin: auto;
   .user {
-    font-size: 1.1em; 
+    font-size: 1.1em;
     padding: 5px;
   }
 }
